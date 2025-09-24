@@ -29,7 +29,9 @@ github_username:  ran-ying
 theme: minima
 plugins:
   - jekyll-feed
-
+  - jekyll-paginate
+paginate: 5  # 每页显示5篇文章
+paginate_path: "/page:num/"
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
+<div class="home">
+    {% for post in paginator.posts %}
+    <article class="post">
+        <h2>{{ post.date | date: "%b %-d, %Y" }}</h2>
+
+        {% assign parts = post.content | split: '!!!!!' %}
+        <div class="content">
+            <div class="links">
+                <a href="{{ post.source }}" target="_blank">News source</a>
+                <a href="{{ post.url | prepend: site.baseurl }}" target="_blank">Article link</a>
+            </div>
+            <div class="container">
+                <div class="original">
+                    {{ parts[0] }}
+                </div>
+                <div class="translation">
+                    {{ parts[1] }}
+                </div>
+            </div>
+            <div class="notes">
+                {{ parts[2] }}
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+    <!-- 分页导航 -->
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Previous</a>
+        {% else %}
+        <span>Previous</span>
+        {% endif %}
+        <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Next</a>
+        {% else %}
+        <span>Next</span>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>

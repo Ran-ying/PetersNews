@@ -30,7 +30,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate
-paginate: 5  # 每页显示5篇文章
+paginate: 1  # 每页显示1篇文章
 paginate_path: "/page:num/"
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -19,6 +19,9 @@ layout: default
         {% endif %}
     </div>
     {% endif %}
+
+
+    <!-- {% assign sorted_posts = paginator.posts | reverse %} -->
     {% for post in paginator.posts %}
     <article class="post">
         <h2>{{ post.date | date: "%b %-d, %Y" }}</h2>
